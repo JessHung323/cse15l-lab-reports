@@ -2,7 +2,7 @@
 
 ## Lab reports
 - Week 1 Lab Report:
-[Link Text]("week1_lab_report.md")
+[Link Text](week1_lab_report.md)
 
 
 <a href="random.md" title="random.md">Just a random test file -- Please click</a>
