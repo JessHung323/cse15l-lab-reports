@@ -1,12 +1,13 @@
 # random text
-**Course assignments**
 
 ## Lab reports
 - Week 1 Lab Report:
 <a href="week1_lab_report.md">Week 1 Report</a>
 
 
-<a href="random.md" title="random.md">Just a random test file</a>
+<a href="random.md" title="random.md">Just a random test file -- Please click</a>
+
+**Course assignments**
 - Lab reports
 - Quizzes
 - Skill test
