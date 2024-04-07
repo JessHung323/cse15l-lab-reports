@@ -3,8 +3,7 @@
 
 ## Lab reports
 - Week 1 Lab Report:
-```markdown
-{% random.md %}
+<a href="random.md" title="random.md">Just a random test file</a>
 
 - Lab reports
 - Quizzes
