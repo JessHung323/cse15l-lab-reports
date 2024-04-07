@@ -1,4 +1,4 @@
-# random text
+# CSE 15L SP24 Lab Reports
 
 ## Lab reports
 - Week 1 Lab Report:
