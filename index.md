@@ -1,6 +1,11 @@
 # random text
 **Course assignments**
 
+## Lab reports
+- Week 1 Lab Report:
+```markdown
+{% random.md %}
+
 - Lab reports
 - Quizzes
 - Skill test
