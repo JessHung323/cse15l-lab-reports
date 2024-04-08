@@ -4,10 +4,12 @@
 ### Basic Commands
 Command `cd`
 - `cd` with _no_ arguments
-```
-(base) jessica@Jessicas-Air-3 cse15l-lab-reports % cd
-(base) jessica@Jessicas-Air-3 ~ % 
-```
+    - Absolute path: /Users/jessica/Desktop/Academics/2023-2024/SP24/CSE15L/cse15l-lab-reports
+    - ```
+    (base) jessica@Jessicas-Air-3 cse15l-lab-reports % cd
+    (base) jessica@Jessicas-Air-3 ~ % 
+    ```
+    - Explanation: Since `cd` is executed without argument, this returns back to the user's home directory by default, and no error occurred.
 - `cd` with path to a _directory_ as an argument
 ```
 (base) jessica@Jessicas-Air-3 ~ % cd Desktop  
