@@ -41,3 +41,7 @@
             }
         }
         ```
+    - Using `add-message` for first time after launching server:
+        - ![/add-message?s=Hello&user=jpolitz](assets/sc1.png)
+    - Using `add-message` for second time after launching server:
+        - ![/add-message?s=How are you today&user=everyone](assets/sc2.png)
