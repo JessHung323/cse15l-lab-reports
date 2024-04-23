@@ -41,7 +41,14 @@
             }
         }
         ```
-    - Using `add-message` for first time after launching server:
+    - Using `add-message` for *first* time after launching server:
         - ![/add-message?s=Hello&user=jpolitz](assets/sc1.png)
-    - Using `add-message` for second time after launching server:
+        - First by launching the server at the port 4000, the main method in the class `ChatServer`is used. The argument for this call is the port number 4000 that I used to launch the server.
+        - As the localhost is opened on the webserver, I added `/add-message?s=Hello&user=jpolitz` as a path to the url. This execution changed the class variable `text`, which is a variable that reflects the message on the webpage. The value of this variable changes from an empty string, to a message with `jpolitz: Hello` added to the end, as expected.
+    - Using `add-message` for *second* time after launching server:
         - ![/add-message?s=How are you today&user=everyone](assets/sc2.png)
+        - After the first execution, I altered the orginal url path to `/add-message?s=How are you today&user=everyone`. This execution changed the class variable `text`, which is a variable that reflects the message on the webpage. The value of this variable isthen updated from the previous message, to a message with 
+        ```
+        jpolitz: Hello
+        everyone: How are you today
+        ```
