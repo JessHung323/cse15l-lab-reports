@@ -52,10 +52,14 @@
         jpolitz: Hello
         everyone: How are you today
         ```
+
+---
 ### Part 2
 - ![1](assets/ssh_pri.png)
-- ![2](assets/server_key_loc.png)
-- ![3](assets/login.png)
 
+- ![2](assets/server_key_loc.png)
+
+- ![3](assets/login.png)
+---
 ### Part 3
-- Something that I learned from lab during the past week was using ssh to enter different servers. On top of this, a new thing I learned is to connect to servers directly on VSCode, and this makes connecting much simpler as I no longer need to use the terminal.
+- Something that I learned from lab during the past week was using `ssh` to enter different servers. On top of this, a new thing I learned is to connect to servers directly on VSCode, and this makes connecting much simpler as I no longer need to use the terminal.
