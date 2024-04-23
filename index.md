@@ -1,8 +1,10 @@
 # CSE 15L SP24 Lab Reports
 
 ## Lab reports
-- Week 1 Lab Report:
-[Link Text](week1_lab_report.md)
+- Lab Report 1:
+[click to access report](week1_lab_report.md)
+- Lab Report 2:
+[click to access report](week2_lab_report.md)
 
 
 <a href="random.md" title="random.md">Just a random test file -- Please click</a>
