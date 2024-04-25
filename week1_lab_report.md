@@ -59,7 +59,7 @@ Command `cat`
         ^C
         (base) jessica@Jessicas-Air-3 Desktop % 
         ```
-    - _Explanation_: `cat` is used for multiple reasons, however when its not given an argument, it does not know which file it should look at hence the terminal fails to return an output as it continues to run, forcing control C to be applied to end the execution.
+    - _Explanation_: `cat` is used for multiple reasons, however when its not given an argument, it does not know which file it should look at hence the terminal fails to return an output as it continues to run, forcing control C to be applied to end the execution. This is an error, requiring keyboard interruption.
 - `cat` with path to a _directory_ as an argument
     - _Absolute path_: `/Users/jessica/Desktop`
     - ```
