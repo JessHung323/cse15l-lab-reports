@@ -19,29 +19,29 @@ class StringLength implements StringChecker {
 ```
 
 - failure-inducing input:
-    - ```
-    @Test
-    public void testFilterWithStringLength() {
-        List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
-        StringChecker checker = new StringLength("hello");
+```
+@Test
+public void testFilterWithStringLength() {
+    List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
+    StringChecker checker = new StringLength("hello");
 
-        List<String> expected = Arrays.asList("example", "javaisthebest");
-        List<String> actual = ListExamples.filter(input, checker);
+    List<String> expected = Arrays.asList("example", "javaisthebest");
+    List<String> actual = ListExamples.filter(input, checker);
 
-        assertEquals(expected, actual);
-    }```
+    assertEquals(expected, actual);
+}```
 - no-failure input:
-    - ```
-    @Test
-    public void testFilterWithStringLengthPass() {
-        List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
-        StringChecker checker = new StringLength("JavaIsBest!");
+```
+@Test
+public void testFilterWithStringLengthPass() {
+    List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
+    StringChecker checker = new StringLength("JavaIsBest!");
 
-        List<String> expected = Arrays.asList("javaisthebest");
-        List<String> actual = ListExamples.filter(input, checker);
+    List<String> expected = Arrays.asList("javaisthebest");
+    List<String> actual = ListExamples.filter(input, checker);
 
-        assertEquals(expected, actual);
-    }```
+    assertEquals(expected, actual);
+}```
 - ![Image](assets/lab03.png)
 - Fix Bugs
     - Before: 
