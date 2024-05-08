@@ -1,7 +1,7 @@
 # Lab Report 3
-## Servers & SSH Keys
+## Bugs and Commands
 
-### Part 1
+### Part 1 - Bugs
 Suppose the `StringChecker` interface is implemented as follows:
 ```
 class StringLength implements StringChecker {
@@ -71,8 +71,8 @@ public void testFilterWithStringLengthPass() {
         ```
 - This fixed the bug as originally the `0` in the method argument asks the method to add the second argument to the first position of the arraylist. By removing the optional index argument, `.add()` adds to the end of the arraylist by default, hence preserving the order as desired.
 
-### Part 2
-I choose to look further into the command `grep`. I asked ChatGPT to give me some different and interesting ways to work with the `grep` command:
+### Part 2 - Researching Commands
+I choose to look further into the command `grep`. I asked **ChatGPT** to give me some different and interesting ways to work with the `grep` command:
 1. `grep -r --exclude-dir='excluded_dir' 'pattern' /path/to/directory`
     - ```
         (base) jessica@Jessicas-Air-3 technical % grep -r --include='*.txt' --exclude-dir='biomed' '' . | head -n 5
