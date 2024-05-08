@@ -17,7 +17,6 @@ class StringLength implements StringChecker {
     }
 }
 ```
-
 - failure-inducing input:
 ```
 @Test
@@ -29,7 +28,8 @@ public void testFilterWithStringLength() {
     List<String> actual = ListExamples.filter(input, checker);
 
     assertEquals(expected, actual);
-}```
+}
+```
 - no-failure input:
 ```
 @Test
@@ -41,7 +41,8 @@ public void testFilterWithStringLengthPass() {
     List<String> actual = ListExamples.filter(input, checker);
 
     assertEquals(expected, actual);
-}```
+}
+```
 - ![Image](assets/lab03.png)
 - Fix Bugs
     - Before: 
