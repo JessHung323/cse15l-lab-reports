@@ -55,7 +55,8 @@ public void testFilterWithStringLengthPass() {
                 }
             }
             return result;
-        }```
+        }
+        ```
     - After: 
         - ```
         static List<String> filter(List<String> list, StringChecker sc) {
@@ -66,5 +67,6 @@ public void testFilterWithStringLengthPass() {
                 }
             }
             return result;
-        }```
+        }
+        ```
 - This fixed the bug as originally the `0` in the method argument asks the method to add the second argument to the first position of the arraylist. By removing the optional index argument, `.add()` adds to the end of the arraylist by default, hence preserving the order as desired.
