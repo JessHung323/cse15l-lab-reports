@@ -18,7 +18,7 @@ class StringLength implements StringChecker {
 }
 ```
 
-- failure-inducing input
+- failure-inducing input:
     - ```
     @Test
     public void testFilterWithStringLength() {
@@ -30,7 +30,7 @@ class StringLength implements StringChecker {
 
         assertEquals(expected, actual);
     }```
-- no-failure input
+- no-failure input:
     - ```
     @Test
     public void testFilterWithStringLengthPass() {
@@ -66,3 +66,4 @@ class StringLength implements StringChecker {
             }
             return result;
         }```
+- This fixed the bug as originally the `0` in the method argument asks the method to add the second argument to the first position of the arraylist. By removing the optional index argument, `.add()` adds to the end of the arraylist by default, hence preserving the order as desired.
