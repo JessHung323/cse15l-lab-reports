@@ -109,7 +109,8 @@ I choose to look further into the command `grep`. I asked **ChatGPT** to give me
         ```
     - This command finds the pattern in a given directory recursively, and counts the number of times the pattern occurs. It can be useful when one wants to find whether some keywords exist in the files of a specific directory.
     - ```
-        (base) jessica@Jessicas-Air-3 technical % grep -c '*science*' ./biomed/1468-6708-3-1.txt ./biomed/1468-6708-3-3.txt
+        (base) jessica@Jessicas-Air-3 technical % grep -c '*science*' \
+        > ./biomed/1468-6708-3-1.txt ./biomed/1468-6708-3-3.txt
         ./biomed/1468-6708-3-1.txt:0
         ./biomed/1468-6708-3-3.txt:0
         ```
@@ -143,7 +144,9 @@ I choose to look further into the command `grep`. I asked **ChatGPT** to give me
 
 4. `grep -oE 'regex_pattern' file.txt`
     - ```
-        (base) jessica@Jessicas-Air-3 technical % date_pattern='(January|February|March|April|May|June|July|August|September|October|November|December) [0-9]{1,2}, [0-9]{4}'
+        (base) jessica@Jessicas-Air-3 technical % date_pattern=\
+        > '(January|February|March|April|May|June|July|August|September|October|November|December) \
+        > [0-9]{1,2}, [0-9]{4}'
         (base) jessica@Jessicas-Air-3 technical % grep -oE "$date_pattern" \
         > ./government/About_LSC/Comments_on_semiannual.txt
         October 1, 2000
