@@ -9,6 +9,8 @@
 [click to access report](lab_report_03.md)
 - Lab Report 4:
 [click to access report](lab_report_04.md)
+- Lab Report 5:
+[click to access report](lab_report_05.md)
 
 
 <a href="random.md" title="random.md">Just a random test file -- Please click</a>
