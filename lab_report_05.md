@@ -71,30 +71,30 @@
             ```
     - Content in `ListTests.java`
         - ```
-        import static org.junit.Assert.*;
-        import org.junit.*;
-        import java.util.*;
+            import static org.junit.Assert.*;
+            import org.junit.*;
+            import java.util.*;
 
-        public class ListTests {
-            @Test
-            public void testFilterWithStringLengthFail() {
-                List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
-                StringChecker checker = new StringLength("hello");
+            public class ListTests {
+                @Test
+                public void testFilterWithStringLengthFail() {
+                    List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
+                    StringChecker checker = new StringLength("hello");
 
-                List<String> expected = Arrays.asList("example", "javaisthebest");
-                List<String> actual = ListExamples.filter(input, checker);
+                    List<String> expected = Arrays.asList("example", "javaisthebest");
+                    List<String> actual = ListExamples.filter(input, checker);
 
-                assertEquals(expected, actual);
+                    assertEquals(expected, actual);
+                }
+                @Test
+                public void testFilterWithStringLengthPass() {
+                    List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
+                    StringChecker checker = new StringLength("JavaIsBest!");
+
+                    List<String> expected = Arrays.asList("javaisthebest");
+                    List<String> actual = ListExamples.filter(input, checker);
+
+                    assertEquals(expected, actual);
+                }
             }
-            @Test
-            public void testFilterWithStringLengthPass() {
-                List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
-                StringChecker checker = new StringLength("JavaIsBest!");
-
-                List<String> expected = Arrays.asList("javaisthebest");
-                List<String> actual = ListExamples.filter(input, checker);
-
-                assertEquals(expected, actual);
-            }
-        }
             ```
