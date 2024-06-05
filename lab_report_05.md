@@ -12,7 +12,8 @@
     - ![Image](assets/lab5_02.png)
     - I think the bug is from how I assigned the wrong number to the variables I'm using.
 - The file and directory structure
-    - ```.
+    - ```
+        .
         ├── ArrayExamples.class
         ├── ArrayExamples.java
         ├── ArrayTests.class
@@ -34,3 +35,66 @@
             ├── hamcrest-core-1.3.jar
             └── junit-4.13.2.jar
         ```
+    - Content in `ArrayTests.java`
+        - ```
+            import static org.junit.Assert.*;
+            import org.junit.*;
+
+            public class ArrayTests {
+                @Test 
+                public void testReverseInPlace() {
+                int[] input1 = { 3 };
+                ArrayExamples.reverseInPlace(input1);
+                assertArrayEquals(new int[]{ 3 }, input1);
+                }
+
+
+            @Test
+            public void testReversed() {
+                int[] input1 = { };
+                assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+            }
+
+            @Test
+            public void testReverseInPlace2() {
+                int[] input2 = {1, 2};
+                ArrayExamples.reverseInPlace(input2);
+                assertArrayEquals(new int[]{2, 1}, input2);
+            }
+
+            @Test
+            public void testReversed2() {
+                int[] input2 = {1};
+                assertArrayEquals(new int[]{1}, ArrayExamples.reversed(input2));
+            }
+            }
+            ```
+    - Content in `ListTests.java`
+        - ```
+        import static org.junit.Assert.*;
+        import org.junit.*;
+        import java.util.*;
+
+        public class ListTests {
+            @Test
+            public void testFilterWithStringLengthFail() {
+                List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
+                StringChecker checker = new StringLength("hello");
+
+                List<String> expected = Arrays.asList("example", "javaisthebest");
+                List<String> actual = ListExamples.filter(input, checker);
+
+                assertEquals(expected, actual);
+            }
+            @Test
+            public void testFilterWithStringLengthPass() {
+                List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
+                StringChecker checker = new StringLength("JavaIsBest!");
+
+                List<String> expected = Arrays.asList("javaisthebest");
+                List<String> actual = ListExamples.filter(input, checker);
+
+                assertEquals(expected, actual);
+            }
+        }
+            ```
