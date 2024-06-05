@@ -78,17 +78,20 @@
             public class ListTests {
                 @Test
                 public void testFilterWithStringLengthFail() {
-                    List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
+                    List<String> input = Arrays.asList("hello", "world", 
+                        "example", "javaisthebest", "code");
                     StringChecker checker = new StringLength("hello");
 
-                    List<String> expected = Arrays.asList("example", "javaisthebest");
+                    List<String> expected = Arrays.asList("example", 
+                        "javaisthebest");
                     List<String> actual = ListExamples.filter(input, checker);
 
                     assertEquals(expected, actual);
                 }
                 @Test
                 public void testFilterWithStringLengthPass() {
-                    List<String> input = Arrays.asList("hello", "world", "example", "javaisthebest", "code");
+                    List<String> input = Arrays.asList("hello", "world", 
+                        "example", "javaisthebest", "code");
                     StringChecker checker = new StringLength("JavaIsBest!");
 
                     List<String> expected = Arrays.asList("javaisthebest");
@@ -97,4 +100,63 @@
                     assertEquals(expected, actual);
                 }
             }
+            ```
+    - Content in `grader.sh`
+        - ```
+            CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
+            
+            run_tests() {
+            local test_file=$1
+            local test_class=${test_file%.java}
+
+            javac -cp $CPATH $test_file
+
+            if [ $? -ne 0 ]; then
+                echo "Compilation failed for $test_file"
+                return
+            fi
+
+            local test_output=$(java -cp "$CPATH" org.junit.runner.JUnitCore "$test_class")
+
+            echo "Raw JUnit test output for $test_class:"
+
+            local test_summary=$(echo "$test_output" | grep -E "OK|Failures")
+
+            local num_tests=0
+            local num_failures=0
+            local num_passed=0
+
+            if [[ "$test_summary" == *"OK"* ]]; then
+                num_tests=$(echo "$test_summary" | awk -F '[()]' '{print $2}' | awk '{print $1}')
+                num_passed=$num_tests
+            else
+                echo "SUMMARY: $test_summary"
+                num_failures=$(echo "$test_summary" | grep -oE "[0-9]+" | tail -n 1)
+                num_tests=$(echo "$test_summary" | grep -oE "[0-9]+" | head -n 1)
+
+                if [[ -z "$num_failures" ]]; then
+                num_failures=0
+                fi
+
+                if [[ -z "$num_tests" ]]; then
+                num_tests=0
+                fi
+
+                echo $num_failures
+                echo $num_tests
+                num_passed=$((num_tests - num_failures))
+            fi
+
+            echo "Results for $test_class:"
+            echo "Total tests run: $num_tests"
+            echo "$num_passed tests passed, $num_failures tests failed."
+            echo
+            }
+
+            for test_file in *.java; do
+            if [[ $test_file == *Tests.java ]]; then
+                run_tests "$test_file"
+            fi
+            done
+
             ```
