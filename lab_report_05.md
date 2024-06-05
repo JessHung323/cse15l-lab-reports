@@ -104,7 +104,7 @@
     - Content in `grader.sh`
         - ```
             CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
-            
+
             run_tests() {
             local test_file=$1
             local test_class=${test_file%.java}
@@ -116,7 +116,8 @@
                 return
             fi
 
-            local test_output=$(java -cp "$CPATH" org.junit.runner.JUnitCore "$test_class")
+            local test_output=$(java -cp "$CPATH" org.junit.runner.JUnitCore 
+                "$test_class")
 
             echo "Raw JUnit test output for $test_class:"
 
@@ -127,12 +128,15 @@
             local num_passed=0
 
             if [[ "$test_summary" == *"OK"* ]]; then
-                num_tests=$(echo "$test_summary" | awk -F '[()]' '{print $2}' | awk '{print $1}')
+                num_tests=$(echo "$test_summary" | awk -F '[()]' '{print $2}' 
+                    | awk '{print $1}')
                 num_passed=$num_tests
             else
                 echo "SUMMARY: $test_summary"
-                num_failures=$(echo "$test_summary" | grep -oE "[0-9]+" | tail -n 1)
-                num_tests=$(echo "$test_summary" | grep -oE "[0-9]+" | head -n 1)
+                num_failures=$(echo "$test_summary" | grep -oE "[0-9]+" 
+                    | head -n 1)
+                num_tests=$(echo "$test_summary" | grep -oE "[0-9]+" 
+                    | tail -n 1)
 
                 if [[ -z "$num_failures" ]]; then
                 num_failures=0
@@ -158,5 +162,8 @@
                 run_tests "$test_file"
             fi
             done
-
             ```
+    - I have to switch the `head` to `tail` and `tail` to `head` when extracting the number of tests in the condition dealing with having failed cases.
+
+### Part 2
+Something cool that I learned in the second half of the quarter is to write my own grading script in bash. I have always wonders how the programming assignments are graded automatically by running the grading scripts against the test files for some of my classes. I learned how to store the information using echo and the specific syntax bash has in the grading script and I think it's very cool and useful.
